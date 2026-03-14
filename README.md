@@ -12,5 +12,9 @@ Add your environment variables inside the .env file.
 4. Install the required dependencies
 pip install -r requirements.txt
 
-5. Run the FastAPI project
+5. change project dir.
+cd first-fastapi
+
+6. Run the FastAPI project
 uvicorn main:app --reload
+
