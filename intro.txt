@@ -1,0 +1,25 @@
+fastapi is a modern python web framework used to build APIs quickly and efficient.
+
+released in 2018.
+
+Built on two different library = Starlette(web parts handel karna : route ,request , responce)
+
+ = pydantic (data validation)
+
+ server Used = ASGI (Asynchronous Server Gateway)
+    uvicorn (most comman)= (multipal request hendel kar sakte h)
+    Hypercorn
+
+_______________________________________
+WSGI (Web Server Gateway Interways)
+    Gunicorn (Flask , Django)         # FLASK
+_______________________________________
+High Performance
+Async support (native)
+Auto API Documentation (HTML rendering)
+       redoc
+       seagger UI
+
+Automatic Data validation
+
+Clint -> FastAPI Router -> Schema validation -> ORM model -> My sql Database
