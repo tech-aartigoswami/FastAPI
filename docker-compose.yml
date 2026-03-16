@@ -1,0 +1,28 @@
+version: "3.9"
+
+services:
+
+  mysql:
+    image: mysql:8
+    container_name: mysql_db
+    restart: always
+    environment:
+      MYSQL_ROOT_PASSWORD: ${MYSQL_ROOT_PASSWORD}
+      MYSQL_DATABASE: ${MYSQL_DATABASE}
+    ports:
+      - "${MYSQL_PORT}:3306"
+    volumes:
+      - mysql_data:/var/lib/mysql
+
+  fastapi:
+    build: .
+    container_name: fastapi_app
+    depends_on:
+      - mysql
+    ports:
+      - "${FASTAPI_PORT}:8000"
+    env_file:
+      - .env
+
+volumes:
+  mysql_data:
