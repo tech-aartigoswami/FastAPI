@@ -23,3 +23,6 @@ Auto API Documentation (HTML rendering)
 Automatic Data validation
 
 Clint -> FastAPI Router -> Schema validation -> ORM model -> My sql Database
+
+
+docker : Docker is a containerization tool.
