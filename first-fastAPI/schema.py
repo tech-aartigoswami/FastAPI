@@ -12,3 +12,10 @@ class UserResponse(BaseModel):
 class config:
     orm_mode=True
 
+
+# class config:
+#     orm_model=True
+
+class UserUpdate(BaseModel):
+    name: str
+    email: str

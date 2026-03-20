@@ -18,3 +18,5 @@ cd first-fastapi
 6. Run the FastAPI project
 uvicorn main:app --reload
 
+7. Run streamlit file
+streamlit run streamlit.py

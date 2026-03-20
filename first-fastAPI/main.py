@@ -15,8 +15,8 @@ Base.metadata.create_all(bind=engine)
 app=FastAPI()
 
 @app.get("/")
-def home():
-    return 'hello world!'
+def read_root():
+    return {"message": "FastAPI + MySQL is working 🚀"}
 
 @app.get("/db-test")
 def test_db():
@@ -46,6 +46,15 @@ def get_users_by_id_api(user_id:int,db:Session=Depends(get_db)):
     return get_user_by_id(db)
 
 
+@app.put("/update-user/{user_id}", response_model=UserResponse)
+def update_user_api(user_id: int, user: UserUpdate, db: Session = Depends(get_db)):
+    
+    updated_user = update_user(db, user_id, user)
+
+    if not updated_user:
+        raise HTTPException(status_code=404, detail="User not found")
+
+    return updated_user
 
 
 @app.delete("/delete-users-by-id/{user_id}")
